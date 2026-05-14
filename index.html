@@ -350,20 +350,6 @@
       transform: translateY(-50%);
     }
 
-    .lightbox-caption {
-      position: absolute;
-      left: 50%;
-      bottom: 22px;
-      transform: translateX(-50%);
-      color: white;
-      background: rgba(0, 0, 0, 0.45);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      text-align: center;
-      max-width: 90%;
-    }
-
     .gallery-grid img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
     .gallery-grid img:nth-child(4) { grid-column: span 2; }
     .gallery-grid img:nth-child(9) { grid-column: span 2; }
@@ -635,7 +621,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Penzión Javorina</p>
+    <p>© 2026 Penzión Javorina Duchonka</p>
     <p style="margin-top: 10px;">
       Naše ďalšie stránky:
       <a href="https://www.stravovanieulisku.sk" target="_blank" rel="noopener" style="color: #ffffff; font-weight: 700;">Stravovanie u Lišku</a>
@@ -649,14 +635,12 @@
     <button class="lightbox-prev" id="lightboxPrev" aria-label="Predchádzajúca fotka">‹</button>
     <img id="lightboxImage" src="" alt="">
     <button class="lightbox-next" id="lightboxNext" aria-label="Ďalšia fotka">›</button>
-    <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
   <script>
     const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'));
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
     const closeButton = document.getElementById('lightboxClose');
     const prevButton = document.getElementById('lightboxPrev');
     const nextButton = document.getElementById('lightboxNext');
@@ -668,7 +652,6 @@
       const image = galleryImages[currentImageIndex];
       lightboxImage.src = image.src;
       lightboxImage.alt = image.alt;
-      lightboxCaption.textContent = image.alt;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
